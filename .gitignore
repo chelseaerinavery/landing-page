@@ -1,0 +1,27 @@
+# Node modules (dependencies)
+node_modules/
+
+# Astro-specific directories
+.astro/
+
+# Build output (production files)
+dist/
+
+# Local environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor-specific files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Temporary system files
+.DS_Store
+Thumbs.db
