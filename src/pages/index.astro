@@ -1,7 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import ViewTransitions from "astro/components/ViewTransitions.astro";
 ---
 
 <Layout title="Chelsea Avery">
-  <p>This is a test paragraph. If you can see this, the slot works!</p>
+  <main>
+    <Header
+      title="Chelsea Avery"
+      subtitle="Full Stack Developer"
+      github={{
+        text: "GitHub",
+        href: "https://github.com/chelseaerinavery",
+      }}
+      blueSky={{
+        text: "BlueSky",
+        href: "https://bsky.app/profile/chavery.bsky.social",
+      }}
+      linkedIn={{
+        text: "LinkedIn",
+        href: "https://www.linkedin.com/in/chelseaavery/",
+      }}
+    />
+    <div class="bio-wrapper">
+      <p>
+        Hey there, I'm Chelsea - a full stack developer and "Jill of Abundant
+        Trades" from Boulder, CO. I'm currently contributing as a front-end
+        software engineer to <a href="https://weedmaps.com/">Weedmaps</a>.
+      </p>
+      <p>
+        I love to learn new things and find my flow state. Built with
+        <a href="https://astro.build/">Astro</a> and React. Take a look at some of
+        my other current projects:
+        <button style="display:inline"><a>→</a></button>
+      </p>
+    </div>
+  </main>
 </Layout>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; /* Remove default margin for body */
+  }
+  main {
+    margin: 0;
+    padding: 2rem;
+    max-width: 65ch;
+    background-color: #ffc107;
+  }
+  .bio-wrapper {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .bio-wrapper a {
+    text-decoration: none;
+    color: #2b6cb0;
+    font-weight: 500;
+  }
+  button > a {
+    text-decoration: none;
+  }
+</style>

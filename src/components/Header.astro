@@ -1,0 +1,105 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  blueSky: {
+    text: string;
+    href: string;
+  };
+  linkedIn: {
+    text: string;
+    href: string;
+  };
+  github: {
+    text: string;
+    href: string;
+  };
+}
+
+const { title, subtitle, blueSky, linkedIn, github } = Astro.props;
+---
+
+<div class="header-wrapper">
+  <picture>
+    <source type="image/avif" srcset="./images/headshot.avif" />
+    <source type="image/webp" srcset="./images/headshot.webp" />
+    <img
+      src="./images/headshot.jpg"
+      width="80"
+      height="80"
+      alt="chelsea avery's headshot"
+      class="profile-img"
+    />
+  </picture>
+  <div class="title-subtitle-wrapper">
+    <h1>{title}</h1>
+    <h2>{subtitle}</h2>
+  </div>
+  <div class="social-links">
+    <ul>
+      <li><a href={github.href}>{github.text}</a></li>
+      <li><a href={blueSky.href}>{blueSky.text}</a></li>
+      <li><a href={linkedIn.href}>{linkedIn.text}</a></li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .header-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  picture {
+    grid-row: span 2;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .title-subtitle-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #4a5568;
+    margin: 0;
+  }
+
+  .social-links ul {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .social-links a {
+    text-decoration: none;
+    color: #2b6cb0;
+    font-weight: 500;
+  }
+
+  .social-links a:hover {
+    text-decoration: underline;
+    /* color: TODO */
+  }
+</style>
