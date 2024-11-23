@@ -1,67 +1,62 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import ViewTransitions from "astro/components/ViewTransitions.astro";
+import "../styles/global.css";
 ---
 
 <Layout title="Chelsea Avery">
-  <main>
-    <Header
-      title="Chelsea Avery"
-      subtitle="Full Stack Developer"
-      github={{
-        text: "GitHub",
-        href: "https://github.com/chelseaerinavery",
-      }}
-      blueSky={{
-        text: "BlueSky",
-        href: "https://bsky.app/profile/chavery.bsky.social",
-      }}
-      linkedIn={{
-        text: "LinkedIn",
-        href: "https://www.linkedin.com/in/chelseaavery/",
-      }}
-    />
-    <div class="bio-wrapper">
-      <p>
-        Hey there, I'm Chelsea - a full stack developer and "Jill of Abundant
-        Trades" from Boulder, CO. I'm currently contributing as a front-end
-        software engineer to <a href="https://weedmaps.com/">Weedmaps</a>.
-      </p>
-      <p>
-        I love to learn new things and find my flow state. Built with
-        <a href="https://astro.build/">Astro</a> and React. Take a look at some of
-        my other current projects:
-        <button style="display:inline"><a>→</a></button>
-      </p>
-    </div>
-  </main>
-</Layout>
+  <div transition:name="main" transition:animate="slide">
+    <main>
+      <Header
+        title="Chelsea Avery"
+        subtitle="Full Stack Developer"
+        github={{
+          text: "GitHub",
+          href: "https://github.com/chelseaerinavery",
+        }}
+        blueSky={{
+          text: "BlueSky",
+          href: "https://bsky.app/profile/chavery.bsky.social",
+        }}
+        linkedIn={{
+          text: "LinkedIn",
+          href: "https://www.linkedin.com/in/chelseaavery/",
+        }}
+      />
+      <div class="bio-wrapper">
+        <p>
+          Hey there, I'm Chelsea - a full stack developer and "Jill of Abundant
+          Trades" from Boulder, CO. I'm currently contributing as a front-end
+          software engineer to <a href="https://weedmaps.com/">Weedmaps</a>.
+        </p>
+        <p>
+          I love to learn new things and find my flow state. Built with
+          <a href="https://astro.build/">Astro</a> and <a
+            href="https://docs.astro.build/en/guides/integrations-guide/react/"
+            >React</a
+          >.
+          <!-- <p>
+            Take a look at some of my other current projects:
+            <a class="button-link" href="/projects">→</a>
+          </p> -->
+        </p>
+      </div>
+    </main>
+  </div>
 
-<style>
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0; /* Remove default margin for body */
-  }
-  main {
-    margin: 0;
-    padding: 2rem;
-    max-width: 65ch;
-    background-color: #ffc107;
-  }
-  .bio-wrapper {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  .bio-wrapper a {
-    text-decoration: none;
-    color: #2b6cb0;
-    font-weight: 500;
-  }
-  button > a {
-    text-decoration: none;
-  }
-</style>
+  <style>
+    .bio-wrapper {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .bio-wrapper a {
+      text-decoration: none;
+      color: #42406a;
+      font-weight: 500;
+    }
+    .bio-wrapper a:hover {
+      text-decoration: underline;
+      color: #0da64f;
+    }
+  </style>
+</Layout>

@@ -1,27 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import ViewTransitions from "astro/components/ViewTransitions.astro";
+import "../styles/global.css";
 ---
 
 <Layout title="Chelsea Avery">
-  <Header
-    title="Chelsea Avery"
-    subtitle="Full Stack Developer"
-    github={{
-      text: "github",
-      href: "https://github.com/chelseaerinavery",
-    }}
-    blueSky={{
-      text: "bluesky",
-      href: "https://bsky.app/profile/chavery.bsky.social",
-    }}
-    linkedIn={{
-      text: "linkedin",
-      href: "https://www.linkedin.com/in/chelseaavery/",
-    }}
-  />
-  <main></main>
+  <div transition:name="main" transition:animate="slide">
+    <main>
+      <Header
+        title="Chelsea Avery"
+        subtitle="Full Stack Developer"
+        github={{
+          text: "GitHub",
+          href: "https://github.com/chelseaerinavery",
+        }}
+        blueSky={{
+          text: "BlueSky",
+          href: "https://bsky.app/profile/chavery.bsky.social",
+        }}
+        linkedIn={{
+          text: "LinkedIn",
+          href: "https://www.linkedin.com/in/chelseaavery/",
+        }}
+      />
+      <div class="projects-wrapper">
+        <p>COMING SOON</p>
+        <a class="button-link" href="/">←</a>
+      </div>
+    </main>
+  </div>
 </Layout>
 
-<style></style>
+<style>
+  /* .projects-wrapper {
+  } */
+</style>
