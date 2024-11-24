@@ -18,7 +18,7 @@ main {
 
 .button-link {
     display: inline-block;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: rgb(169, 112, 112);
 }
 
